@@ -79,7 +79,7 @@ const applySorting = initSorting([        // Нам нужно передать 
 
 const {applyFiltering, updateIndexes} = initFiltering(sampleTable.filter.elements)                                // для элемента с именем searchBySeller устанавливаем массив продавцов
 
-const applySearching = initSearching(sampleTable.search.elements)
+const applySearching = initSearching('search')
 
 const appRoot = document.querySelector('#app');
 appRoot.appendChild(sampleTable.container);

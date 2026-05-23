@@ -16,8 +16,15 @@ export function initFiltering(elements) {
 
     const applyFiltering = (query, state, action) => {
         // код с обработкой очистки поля
-         
-
+        const form = document.querySelector('form')
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            if (e.submitter.getAttribute('name') === 'clear') {
+                const parent = e.submitter.parentElement; // <label class="filter-wrapper">
+                const input = parent.querySelector('input');
+                input.value = '';
+            }
+        })
         // @todo: #4.5 — отфильтровать данные, используя компаратор
         const filter = {};
         Object.keys(elements).forEach(key => {
