@@ -5,8 +5,6 @@ import { initSorting } from './components/sorting.js';
 import {initFiltering} from './components/filtering.js';
 import { initSearching } from './components/searching.js';
 
-import {data as sourceData} from "./data/dataset_1.js";
-
 import {initData} from "./data.js";
 import {processFormData} from "./lib/utils.js";
 
@@ -15,7 +13,7 @@ import {initTable} from "./components/table.js";
 
 
 // Исходные данные используемые в render()
-const API = initData(sourceData);
+const API = initData();
 
 /**
  * Сбор и обработка полей из таблицы
@@ -38,6 +36,7 @@ function collectState() {
  * @param {HTMLButtonElement?} action
  */
 async function render(action) {
+    
     let state = collectState(); // состояние полей из таблицы
     let query = {}; // копируем для последующего изменения
     // @todo: использование
